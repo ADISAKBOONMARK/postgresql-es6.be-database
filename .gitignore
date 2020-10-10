@@ -1,0 +1,8 @@
+server/.env
+
+server/bin
+server/node_modules
+server/src/node_modules
+
+server/package-lock.json
+server/src/package-lock.json
