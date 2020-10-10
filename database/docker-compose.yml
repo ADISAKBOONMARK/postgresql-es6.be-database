@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  postgres:
+    container_name: postgres
+    image: postgres
+    environment:
+      POSTGRES_USER: database
+      POSTGRES_PASSWORD: db-password
+      PGDATA: /data/postgres
+    ports:
+      - 0.0.0.0:5432:5432
+    network_mode: "postgresql-network"
+
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin
+      PGADMIN_DEFAULT_PASSWORD: password
+    ports:
+      - 0.0.0.0:8080:80
+    network_mode: "postgresql-network"
